@@ -1,0 +1,267 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Library API",
+    "version": "1.0.0",
+    "description": "API documentation for the Library project"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/v1/billings": {
+      "get": {
+        "summary": "Get all billings",
+        "tags": ["Billings"],
+        "responses": {
+          "200": {
+            "description": "List of billings"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new billing",
+        "tags": ["Billings"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number",
+                    "description": "Billing amount"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Billing description"
+                  },
+                  "user_id": {
+                    "type": "integer",
+                    "description": "ID of the user"
+                  }
+                },
+                "required": ["amount", "description", "user_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Billing successfully created"
+          },
+          "400": {
+            "description": "Invalid input data"
+          }
+        }
+      }
+    },
+    "/api/v1/billings/{id}": {
+      "get": {
+        "summary": "Get billing by ID",
+        "tags": ["Billings"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the billing"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Billing details"
+          },
+          "404": {
+            "description": "Billing not found"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update billing by ID",
+        "tags": ["Billings"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the billing to update"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number",
+                    "description": "Billing amount"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Billing description"
+                  },
+                  "user_id": {
+                    "type": "integer",
+                    "description": "ID of the user"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Billing successfully updated"
+          },
+          "400": {
+            "description": "Invalid input data"
+          },
+          "404": {
+            "description": "Billing not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete billing by ID",
+        "tags": ["Billings"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the billing to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Billing successfully deleted"
+          },
+          "404": {
+            "description": "Billing not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "summary": "Get all users",
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "List of Users"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new user",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "isbn": {
+                    "type": "string",
+                    "description": "ISBN of the user"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "user title"
+                  },
+                  "publication_year": {
+                    "type": "integer",
+                    "description": "Year of publication"
+                  },
+                  "author": {
+                    "type": "string",
+                    "description": "Author name"
+                  }
+                },
+                "required": ["isbn", "title", "publication_year", "author"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "user successfully created"
+          },
+          "400": {
+            "description": "Invalid input data"
+          }
+        }
+      }
+    },
+    "/api/v1/users/{id}": {
+      "get": {
+        "summary": "Get a Users by ID",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Users details"
+          },
+          "404": {
+            "description": "user not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a user by ID",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the user to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "user successfully deleted"
+          },
+          "404": {
+            "description": "user not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  }
+}
