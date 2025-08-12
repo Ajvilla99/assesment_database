@@ -1,122 +1,84 @@
-# 📚 Backend Performance Test Base
+# Frontend with Vite + TailwindCSS
 
-## 🚀 Technologies Used
+This project is a starter for modern frontend applications using [Vite](https://vitejs.dev/) as the bundler and [TailwindCSS](https://tailwindcss.com/) for utility-first styling.
 
-- Node.js
-- Express.js
-- pg
-- pg-format
-- swagger-jsdoc
-- swagger-ui-express
-- Dotenv
+## Features
 
-## 📁 Project Structure
+- ⚡️ Ultra-fast development with Vite
+- 🎨 Efficient and customizable styling with TailwindCSS
+- 🛠️ Minimal configuration, production-ready
+- 📦 Scripts for development, build, and preview
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-URL>
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+## Available Scripts
+
+- `npm run dev` — Starts the hot-reload development server.
+- `npm run build` — Generates the optimized production build.
+- `npm run preview` — Locally previews the production build.
+
+## Folder Structure
 
 ```
-  ├── app.js
-  ├── config
-  │   └── db.js
-  ├── controllers
-  │   ├── billing.controller.js
-  │   ├── loans.controller.js
-  │   └── users.controller.js
-  ├── data
-  │   ├── billing.csv
-  │   ├── data.xlsx
-  │   ├── transaction.csv
-  │   └── users.csv
-  ├── docs
-  │   ├── api.docs.json
-  │   └── script.pg.sql
-  ├── package.json
-  ├── package-lock.json
-  ├── README.md
-  ├── routes
-  │   ├── billing.route.js
-  │   ├── index.js
-  │   ├── transaction.route.js
-  │   └── users.route.js
-  └── seed
-      ├── billing_seed.js
-      ├── index.js
-      ├── transaction_seed.js
-      └── users_seed.js
+frontend/
+├── public/           # Static files
+├── src/              # Main source code
+│   ├── assets/       # Images, fonts, etc.
+│   └── ...           # Components, pages, etc.
+├── index.html        # Main HTML file
+├── tailwind.config.js# TailwindCSS configuration
+├── vite.config.js    # Vite configuration
+├── package.json      # Dependencies and scripts
+└── README.md         # This file
 ```
 
-## 📦 Getting Started
+## TailwindCSS Customization
 
-### 1. Clone the repository
+- Edit `tailwind.config.js` to modify themes, colors, breakpoints, etc.
+- You can add Tailwind plugins as needed.
 
-```bash
-git clone https://github.com/ajvilla99/[repo]
-cd backend
-```
+## Using Vite
 
-### 2. Install dependencies
+- Vite supports [ES module imports](https://vitejs.dev/guide/features.html#es-module-imports) and [hot module replacement](https://vitejs.dev/guide/features.html#hot-module-replacement).
+- Configure routes, aliases, and plugins in `vite.config.js`.
 
-```bash
-npm install
-```
+## Useful Resources
 
-### 3. Configure environment variables
+- [Vite Documentation](https://vitejs.dev/guide/)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [Vite + Tailwind Integration Guide](https://tailwindcss.com/docs/guides/vite)
 
-Create a `.env` file in the root directory with your database credentials and any other required environment variables. Example:
+## Deployment
 
-```env
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=your_user
-DB_PASSWORD=your_password
-DB_NAME=your_db
-```
+1. Run `npm run build` to generate the `dist/` folder.
+2. Upload the contents of `dist/` to your preferred hosting (Netlify, Vercel, GitHub Pages, etc.).
 
-## ⚙️ Useful Commands
+## Contributing
 
-- Run all seeders:
-  ```bash
-  npm run seed
-  ```
-- Test database connection:
-  ```bash
-  npm run test:db
-  ```
-
-## 🖥️ Running the Server
-
-- Start the server:
-  ```bash
-  npm run start
-  ```
-  
-## 📖 API Documentation
-
-- Once the server is running, access the Swagger UI at:  
-  [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
-
-## 🧩 API Endpoints Overview
-
-| Method | Endpoint         | Description             |
-| ------ | ----------------| ----------------------- |
-| GET    | /billings       | List all billings       |
-| GET    | /billings/:id   | Get billing by ID       |
-| POST   | /billings       | Create a new billing    |
-| PATCH  | /billings/:id   | Update billing by ID    |
-| DELETE | /billings/:id   | Delete billing by ID    |
-| GET    | /users          | List all users          |
-| POST   | /users          | Create a new user       |
-| ...    | ...             | ...                     |
-
-## 🗄️ Database
-
-- The SQL script to create the database schema is located at `docs/script.pg.sql`.
-
-## 📝 Notes
-
-- Make sure PostgreSQL is running and accessible with the credentials provided in your `.env` file.
-- Data for initial seeding is located in the `data` folder as CSV files.
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+1. Fork the repository.
+2. Create a branch (`git checkout -b feature/new-feature`).
+3. Make your changes and commit (`git commit -am 'Add new feature'`).
+4. Push to your branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
 
 ---
+
+You're all set! Start building your modern frontend application 🚀
