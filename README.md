@@ -13,34 +13,35 @@
 ## 📁 Project Structure
 
 ```
-  ├── app.js
-  ├── config
-  │   └── db.js
-  ├── controllers
-  │   ├── billing.controller.js
-  │   ├── loans.controller.js
-  │   └── users.controller.js
-  ├── data
-  │   ├── billing.csv
-  │   ├── data.xlsx
-  │   ├── transaction.csv
-  │   └── users.csv
-  ├── docs
-  │   ├── api.docs.json
-  │   └── script.pg.sql
-  ├── package.json
-  ├── package-lock.json
-  ├── README.md
-  ├── routes
-  │   ├── billing.route.js
-  │   ├── index.js
-  │   ├── transaction.route.js
-  │   └── users.route.js
-  └── seed
-      ├── billing_seed.js
-      ├── index.js
-      ├── transaction_seed.js
-      └── users_seed.js
+backend/
+├── app.js
+├── config/
+│   └── db.js
+├── controllers/
+│   ├── billing.controller.js
+│   ├── loans.controller.js
+│   └── users.controller.js
+├── data/
+│   ├── billing.csv
+│   ├── data.xlsx
+│   ├── transaction.csv
+│   └── users.csv
+├── docs/
+│   ├── api.docs.json
+│   └── script.pg.sql
+├── package.json
+├── package-lock.json
+├── README.md
+├── routes/
+│   ├── billing.route.js
+│   ├── index.js
+│   ├── transaction.route.js
+│   └── users.route.js
+└── seed/
+    ├── billing_seed.js
+    ├── index.js
+    ├── transaction_seed.js
+    └── users_seed.js
 ```
 
 ## 📦 Getting Started
